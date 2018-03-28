@@ -25,10 +25,8 @@ def calcurate_score(score_str):
             elif ch == 'D': nums[i] = nums[i]**2
             elif ch == 'T': nums[i] = nums[i]**3
             elif ch == '*':
-                if i > 0:
-                    for offset in range(2): nums[i-offset] *= 2
-                else:
-                    nums[i] *= 2
+                offset = 2 if i>0 else 1
+                for o in range(offset): nums[i-o] *= 2
             elif ch == '#': nums[i] *= -1
 
     print(sum(nums))
